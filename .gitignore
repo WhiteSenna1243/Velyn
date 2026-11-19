@@ -1,0 +1,6 @@
+.build/
+.swiftpm/
+Velyn.app/
+dist/
+.DS_Store
+*.mp4

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Mac App Store build (sandboxed). tools/package.sh adds the team and app identifiers from your profile. -->
+<plist version="1.0">
+<dict>
+    <key>com.apple.security.app-sandbox</key><true/>
+    <!-- Lyrics (LRCLIB), album lookups and animated covers. -->
+    <key>com.apple.security.network.client</key><true/>
+    <!-- Phone remote: the small web page on your Wi-Fi. -->
+    <key>com.apple.security.network.server</key><true/>
+    <!-- The system-audio tap that drives the glow. -->
+    <key>com.apple.security.device.audio-input</key><true/>
+    <key>com.apple.security.automation.apple-events</key><true/>
+    <!-- Music: its own scripting access groups (now playing + controls, and reading the library for search). -->
+    <key>com.apple.security.scripting-targets</key>
+    <dict>
+        <key>com.apple.Music</key>
+        <array>
+            <string>com.apple.Music.playback</string>
+            <string>com.apple.Music.library.read</string>
+        </array>
+    </dict>
+    <!-- Spotify publishes no access groups, so App Review must approve this exception. Explain in the
+         review notes: "Velyn reads the current song and sends play/pause/next to show synced lyrics for it." -->
+    <key>com.apple.security.temporary-exception.apple-events</key>
+    <array>
+        <string>com.spotify.client</string>
+    </array>
+</dict>
+</plist>
